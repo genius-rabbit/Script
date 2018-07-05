@@ -2,3 +2,5 @@
 
 #华中科技大学无线网自动连接脚本 
 文件初始来源：https://github.com/haoqixu/hust_wireless
+
+#文件批量按一定序号重命名脚本<Dian实习打标签>

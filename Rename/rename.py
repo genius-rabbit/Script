@@ -7,8 +7,11 @@ def createfile(desfile, num):
     abspath = os.path.abspath('.')
     packpath = os.path.join(abspath, desfile + num.__str__())
     if not os.path.exists(packpath):
-        print('the destination file'+desfile + num.__str__()+'is exits..')
         os.mkdir(packpath)
+    else:
+        print('the destination file'+desfile + num.__str__()+'is exits...')
+        exit
+
     return packpath
 
 
@@ -62,14 +65,14 @@ def helper():
     print('-i 命名起始编号')
     print('-s 图片源目录')
     print('-d 图片移动的目的地,自动分包后缀+数字(0,1,2...),默认为picPack')
-    print('-w 命名位宽,默认为5')
+    print('-w 命名位宽,默认为6(000000)')
     print('-h 查看帮助信息')
 
 
 index = 1
 sourcefile = ''
 desfile = 'picPack'
-width = 5
+width = 6
 opts, args = getopt.getopt(sys.argv[1:], "hi:s:d:w")
 for op, value in opts:
     if op == '-i':
